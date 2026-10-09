@@ -10,41 +10,12 @@ The system models a basic FPGA-based sensor data acquisition pipeline.
 
 Data enters the FPGA serially through an SPI interface. After a complete 8-bit sample is received, the sample is transferred from the SPI clock domain into the main system clock domain. The data is then buffered in a FIFO and processed using a four-sample moving-average filter.
 
-The complete data path is:
-
-```text
-Simulated Sensor
-      |
-      v
-+-------------+
-| SPI Receiver|
-+-------------+
-      |
-      v
-+----------------------+
-| Clock Domain Crossing|
-+----------------------+
-      |
-      v
-+-------------+
-| FIFO Buffer |
-+-------------+
-      |
-      v
-+----------------------+
-| Moving Average Filter|
-+----------------------+
-      |
-      v
- Processed Data Output
-```
-
 ### System Architecture
 
 The following diagram shows the complete FPGA data path from the simulated sensor input to the processed output.
 
 <p align="center">
-  <img src="screenshots/data_path.png" width="350">
+  <img src="screenshots/data_path.png" width="175">
 </p>
 
 ## Features
